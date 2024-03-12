@@ -1,0 +1,1 @@
+The project uses programing languages such as python,MySQL and data visualization tools such as Microsoft Excel,Power BI,matplotlib along with knowledge of statistics to deduce important results and analysis.
