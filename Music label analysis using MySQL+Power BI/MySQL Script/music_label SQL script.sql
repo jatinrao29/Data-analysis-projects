@@ -22,8 +22,8 @@ select * from invoice;
 select * from invoice_line;
 
 with Popular_genres as(
-select c.country as country,g.name as genre_name,count(il.quantity) as quantity_sold,
-row_number() over(partition by country order by count(il.quantity) desc) as _index 
+select c.country as country,g.name as genre_name,sum(il.quantity) as quantity_sold,
+row_number() over(partition by country order by sum(il.quantity) desc) as _index 
 from genre as g inner join track as t on g.genre_id=t.genre_id
 inner join invoice_line as il on il.track_id =t.track_id
 inner join invoice as i on i.invoice_id=il.invoice_id
